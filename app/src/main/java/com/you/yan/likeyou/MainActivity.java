@@ -25,16 +25,27 @@ public class MainActivity extends BasicActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_wechat:
+                    setActionBarTitle(R.string.wechat);
                     mTextMessage.setText(R.string.wechat);
+                    hideActionBarBack();setActionBarFunc(R.drawable.ic_action_plus);
                     return true;
                 case R.id.navigation_address_book:
+                    setActionBarTitle(R.string.address_book);
+                    setActionBarBack(R.string.address_book);
+                    setActionBarFunc(R.drawable.ic_action_add_person);
                     mTextMessage.setText(R.string.address_book);
                     return true;
                 case R.id.navigation_discover:
                     mTextMessage.setText(R.string.discover);
+                    setActionBarTitle(R.string.discover);
+                    hideActionBarBack();
+                    hideActionBarFunc();
                     return true;
                 case R.id.navigation_me:
+                    setActionBarTitle(R.string.me);
                     mTextMessage.setText(R.string.me);
+                    hideActionBarBack();
+                    hideActionBarFunc();
                     return true;
             }
             return false;

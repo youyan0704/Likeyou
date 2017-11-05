@@ -3,6 +3,8 @@ package com.you.yan.likeyou;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.StringRes;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -62,7 +64,30 @@ public class BasicActivity extends AppCompatActivity implements View.OnClickList
         actionBarFunc.setOnClickListener(this);
     }
 
-    protected void setActionBar(Object title, boolean back, Object back_icon,Object pre_tile,boolean func, Object func_icon){
+    protected void setActionBarTitle(@StringRes int resid) {
+        this.actionBarTitle.setText(resid);
+    }
+
+    protected void setActionBarBack(@StringRes int resid) {
+        this.actionBarBack.setVisibility(View.VISIBLE);
+        this.actionBarPreTitle.setVisibility(View.VISIBLE);
+        this.actionBarPreTitle.setText(resid);
+    }
+    protected void hideActionBarBack(){
+        this.actionBarBack.setVisibility(View.INVISIBLE);
+        this.actionBarPreTitle.setVisibility(View.INVISIBLE);
+    }
+
+    protected void setActionBarFunc(@DrawableRes int resid) {
+        this.actionBarFunc.setVisibility(View.VISIBLE);
+        this.actionBarFunc.setImageResource(resid);
+    }
+
+    protected void hideActionBarFunc(){
+        this.actionBarFunc.setVisibility(View.INVISIBLE);
+    }
+
+    protected void setActionBar(Object title, boolean back, Object back_icon, Object pre_tile, boolean func, Object func_icon){
         if (!TextUtils.isEmpty((String)title) && title instanceof String){
             actionBarTitle.setText((String)title);
         }
