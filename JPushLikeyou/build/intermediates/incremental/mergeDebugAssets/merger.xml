@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/yan/AndroidStudioProjects/Likeyou/JPushLikeyou/assets"/><source path="/Users/yan/AndroidStudioProjects/Likeyou/JPushLikeyou/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/Users/yan/AndroidStudioProjects/Likeyou/JPushLikeyou/build-types/debug/assets"/></dataSet></merger>

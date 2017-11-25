@@ -1,0 +1,4 @@
+#Mon Nov 13 21:38:14 CST 2017
+base.0=/Users/yan/AndroidStudioProjects/Likeyou/JPushLikeyou/build/intermediates/transforms/dexMerger/debug/7
+renamed.0=classes.dex
+file.0=/Users/yan/AndroidStudioProjects/Likeyou/JPushLikeyou/build/intermediates/transforms/dexMerger/debug/7/classes.dex

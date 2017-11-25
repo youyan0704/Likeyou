@@ -3,6 +3,7 @@ package com.you.yan.likeyou;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.support.v7.app.ActionBar;
@@ -19,14 +20,7 @@ import android.widget.Toast;
 public class BasicActivity extends AppCompatActivity implements View.OnClickListener{
 
     protected ProgressDialog waitDialog;
-    /**
-     * 标记标题左右两边的类型:文字
-     */
-    protected final int TITLE_TYPE_TEXT = 0;
-    /**
-     * 标记标题左右两边的类型:图片
-     */
-    protected final int TITLE_TYPE_IMG = 1;
+
     public Context application;
 
     private TextView actionBarTitle;
@@ -40,7 +34,7 @@ public class BasicActivity extends AppCompatActivity implements View.OnClickList
 
         application = getApplicationContext();
         setCustomActionBar();
-
+        setWaitDialog();
     }
 
     //设置自定义的actionbar
@@ -62,6 +56,23 @@ public class BasicActivity extends AppCompatActivity implements View.OnClickList
 
         actionBarBack.setOnClickListener(this);
         actionBarFunc.setOnClickListener(this);
+    }
+
+    //设置等待进度条
+    private void setWaitDialog(){
+        waitDialog = new ProgressDialog(this);
+        waitDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        waitDialog.setMessage("加载中，请稍后....");
+        waitDialog.setCanceledOnTouchOutside(true);
+    }
+
+    protected void showWaitDialog(){
+        if (!waitDialog.isShowing())
+            waitDialog.show();
+    }
+    protected void hidenWaitDialog(){
+        if (waitDialog.isShowing())
+            waitDialog.dismiss();
     }
 
     protected void setActionBarTitle(@StringRes int resid) {

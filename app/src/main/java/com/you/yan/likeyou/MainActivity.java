@@ -28,6 +28,7 @@ public class MainActivity extends BasicActivity {
                     setActionBarTitle(R.string.wechat);
                     mTextMessage.setText(R.string.wechat);
                     hideActionBarBack();setActionBarFunc(R.drawable.ic_action_plus);
+                    showWaitDialog();
                     return true;
                 case R.id.navigation_address_book:
                     setActionBarTitle(R.string.address_book);
